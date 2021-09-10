@@ -27,3 +27,5 @@ Ahora, configure en freertosconfig.h:
 
 Proponga una manera de contrarrestar el efecto sin tocar la configuración mencionada (no utilice la Suspend/Resume para solucionarlo)
 
+Respuesta: lo que sucede es que los tiempos de CPU no se reparten entre tarea B y tarea C. Por lo tanto se ejecuta primero tarea B y luego tarea C. Para resolver esto se propone utilizar la función taskYIELD() y hacer unas modificaciones en la función blink_n_500.
+

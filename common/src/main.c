@@ -105,7 +105,19 @@ void blink_n_500( uint32_t n, uint32_t led )
     for( ; cycles>0 ; cycles-- )
     {
         gpioToggle( led );
-        delay_con_while( 500 );
+        if (led == LED1)
+        {
+            taskYIELD();
+        }
+        else if (led == LED2)
+        {
+            delay_con_while(500);
+            taskYIELD();
+        }
+        else
+        {
+            delay_con_while(500);
+        }
     }
 }
 

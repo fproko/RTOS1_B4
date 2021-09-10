@@ -8,7 +8,7 @@
 #include "chip.h"
 
 #define configUSE_PREEMPTION                         1
-#define configUSE_TIME_SLICING                       1
+#define configUSE_TIME_SLICING                       0  /*se desactiva round robin*/
 
 
 #define configUSE_TICKLESS_IDLE                      0
