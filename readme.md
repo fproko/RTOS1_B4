@@ -1,4 +1,6 @@
 # Resolución de ejercicio B4 de Guia de ejercitación de RTOS de CESE (2021)
+Autor:
+Fernando Prokopiuk <fernandoprokopiuk@gmail.com>
 
 Implemente un sistema de 4 tareas:
 
@@ -12,7 +14,7 @@ Led 3 - Tarea D - Prioridad +1
 
 Arrancando solamente la tarea A antes de comenzar el scheduler, genere la siguiente secuencia de encendido y apagado (500ms/500ms):
 
-![image info](./pictures/patron.png){width='50px'}
+![image info](./pictures/patron.png)
 
 El sistema deberá arrancar ejecutando la tarea de mayor prioridad solamente.
 
