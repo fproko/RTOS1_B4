@@ -91,6 +91,7 @@ void delay_con_while( uint32_t ms )
     TickType_t target = base  + ms ;   /* no esta contemplado el wrap arraond */
     while(  xTaskGetTickCount() < target   )
     {
+        taskYIELD();
         dummy++;
     }
 }
@@ -105,19 +106,7 @@ void blink_n_500( uint32_t n, uint32_t led )
     for( ; cycles>0 ; cycles-- )
     {
         gpioToggle( led );
-        if (led == LED1)
-        {
-            taskYIELD();
-        }
-        else if (led == LED2)
-        {
-            delay_con_while(500);
-            taskYIELD();
-        }
-        else
-        {
-            delay_con_while(500);
-        }
+        delay_con_while(500);
     }
 }
 

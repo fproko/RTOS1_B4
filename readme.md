@@ -27,5 +27,4 @@ Ahora, configure en freertosconfig.h:
 
 Proponga una manera de contrarrestar el efecto sin tocar la configuración mencionada (no utilice la Suspend/Resume para solucionarlo)
 
-Respuesta: lo que sucede es que los tiempos de CPU no se reparten entre tarea B y tarea C. Por lo tanto se ejecuta primero tarea B y luego tarea C. Para resolver esto se propone utilizar la función taskYIELD() y hacer unas modificaciones en la función blink_n_500.
-
+Respuesta: las tareas B y C son tareas de igual prioridad. Al desactivar el round robin el planificador no divide el tiempo de CPU entre estas tareas cuando ambas se encuentran listas para ser ejecutadas. Por lo tanto siguiendo la cola de ejecución, el planificador pone en ejecución primero tarea B y luego tarea C. Para resolver el problema se propone utilizar la función taskYIELD () para forzar el cambio de contexto a otra tarea, de manera que se dividan los tiempos de CPU.
